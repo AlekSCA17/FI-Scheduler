@@ -25,7 +25,26 @@ export function useNeonAuth(): UseNeonAuthReturn {
   };
 
   const signOut = async (): Promise<void> => {
+    // Sign out from Neon Auth
     await neonClient.auth.signOut();
+
+    // Clear all localStorage data
+    localStorage.removeItem("semestrix-query-cache");
+
+    // Clear all other potential user data stored in localStorage
+    const keysToRemove = Object.keys(localStorage).filter(
+      (key) =>
+        key.startsWith("semestrix-") ||
+        key.includes("user") ||
+        key.includes("auth")
+    );
+    keysToRemove.forEach((key) => localStorage.removeItem(key));
+
+    // Clear sessionStorage as well
+    sessionStorage.clear();
+
+    // Redirect to home page and force reload
+    window.location.href = "/";
   };
 
   return {
