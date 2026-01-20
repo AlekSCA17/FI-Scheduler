@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import {
   fadeIn,
   slideInFromBottom,
@@ -7,8 +8,34 @@ import {
 import GradientTitle from "@atoms/GradientTitle";
 import CTAButton from "@atoms/CTAButton";
 import WelcomeBadge from "@molecules/WelcomeBadge";
+import { useNeonAuth } from "@lib/hooks/useNeonAuth";
+import { useProfileStatus } from "@services/profiles/queries";
 
 const HeroContent = () => {
+  const navigate = useNavigate();
+  const { user } = useNeonAuth();
+  const { data: status } = useProfileStatus();
+
+  const handleCTAClick = () => {
+    // If not authenticated, open auth modal
+    if (!user) {
+      const authModalCheckbox = document.getElementById(
+        "auth-modal"
+      ) as HTMLInputElement;
+      if (authModalCheckbox) {
+        authModalCheckbox.checked = true;
+      }
+      return;
+    }
+
+    // If authenticated, redirect based on onboarding status
+    if (!status || !status.has_profile || status.onboarding_step < 3) {
+      navigate("/onboarding");
+    } else {
+      navigate("/dashboard");
+    }
+  };
+
   return (
     <motion.div
       initial="hidden"
@@ -37,12 +64,12 @@ const HeroContent = () => {
           variants={slideInFromBottom}
           className="text-base md:text-lg text-gray-600 dark:text-gray-400 my-5 max-w-[600px] mx-auto"
         >
-          La herramienta esencial para estudiantes de ingeniería. Organiza tu
-          horario, controla tus créditos y descubre qué materias puedes cursar
-          según tu progreso en el pensum.
+          La forma más inteligente de consultar las carreras de ingeniería.
+          Navega entre cursos, valida prerrequisitos y créditos oficiales en una
+          plataforma rápida y amigable.
         </motion.p>
 
-        <CTAButton label="Comenzar Ahora" />
+        <CTAButton label="Comenzar Ahora" onClick={handleCTAClick} />
       </div>
     </motion.div>
   );
