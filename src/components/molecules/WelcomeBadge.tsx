@@ -9,7 +9,7 @@ const WelcomeBadge: React.FC = () => (
   >
     <SvgIcon name="sparkles" className="text-primary mr-2 size-4 sm:size-5" />
     <h1 className="welcome-text text-[13px] sm:text-sm md:text-base">
-      Semestrix by Ricardious
+      Semestrix Beta by Ricardious
     </h1>
   </motion.div>
 );

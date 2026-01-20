@@ -1,6 +1,6 @@
-import SocialLink from "@atoms/SocialLink";
 import FooterLink from "@atoms/FooterLink";
-import { FOOTER_LINKS, SOCIAL_LINKS, APP_INFO } from "@constants/footer";
+import SvgIcon from "@atoms/SvgIcon";
+import { FOOTER_LINKS, APP_INFO } from "@constants/footer";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -24,23 +24,10 @@ const Footer = () => {
                   <span className="px-2 py-1 bg-green-100/50 dark:bg-green-900/20 text-green-700 dark:text-green-400 rounded-full text-xs font-medium backdrop-blur-sm">
                     100% Gratuito
                   </span>
-                  <span className="px-2 py-1 bg-blue-100/50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-400 rounded-full text-xs font-medium backdrop-blur-sm">
-                    Código Abierto
+                  <span className="px-2 py-1 bg-purple-100/50 dark:bg-purple-900/20 text-purple-700 dark:text-purple-400 rounded-full text-xs font-medium backdrop-blur-sm">
+                    Para USAC
                   </span>
                 </div>
-              </div>
-
-              {/* Social Links */}
-              <div className="flex gap-3">
-                {SOCIAL_LINKS.map((social) => (
-                  <div key={social.label}>
-                    <SocialLink
-                      href={social.href}
-                      iconName={social.iconName}
-                      label={social.label}
-                    />
-                  </div>
-                ))}
               </div>
             </div>
 
@@ -127,21 +114,19 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">
               <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                Mantente informado
+                ¿Tienes dudas o sugerencias?
               </h4>
               <p className="text-gray-600 dark:text-gray-400">
-                Síguenos en GitHub para las últimas actualizaciones
+                Contáctame para mejorar tu experiencia
               </p>
             </div>
 
             <a
-              href={APP_INFO.github}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#help"
               className="bg-white/20 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 hover:border-primary/50 dark:hover:border-primary/50 text-gray-900 dark:text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 flex items-center gap-2"
             >
-              <span>⭐</span>
-              Seguir en GitHub
+              <SvgIcon name="message-circle" className="w-5 h-5" />
+              Enviar Feedback
             </a>
           </div>
         </div>
@@ -151,8 +136,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
               <p>
-                © {currentYear} {APP_INFO.name}. Hecho con ❤ en{" "}
-                {APP_INFO.location}
+                © {currentYear} {APP_INFO.name}. Hecho con ❤ por ricardious
               </p>
             </div>
 

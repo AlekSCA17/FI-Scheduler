@@ -2,7 +2,7 @@ import "./RocketLoader.css";
 
 const RocketLoader = () => {
   return (
-    <div className="rocket-loader-container fixed inset-0 z-50 flex items-center justify-center bg-base-100 dark:bg-base-dark">
+    <div className="rocket-loader-container fixed inset-0 z-[9999] flex items-center justify-center bg-base-100 dark:bg-base-dark">
       <div className="rocket-loader-wrapper">
         <div>
           <div className="loader">
