@@ -24,8 +24,7 @@ const LegalFooter = () => {
           </div>
 
           <p className="mb-4">
-            &copy; {currentYear} {APP_INFO.name}. Hecho con ❤ en{" "}
-            {APP_INFO.location}
+            &copy; {currentYear} {APP_INFO.name}. Hecho con ❤ por ricardious
           </p>
 
           <div className="flex justify-center items-center gap-6 text-sm">
