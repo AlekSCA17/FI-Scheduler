@@ -7,10 +7,10 @@ export const TERMS_PAGE_INFO = {
     "Conoce las reglas y condiciones para usar Semestrix de manera segura y responsable.",
   introTitle: "Acuerdo de Términos de Servicio",
   introText:
-    "Bienvenido a Semestrix. Estos Términos de Servicio regulan tu uso de nuestra plataforma de planificación académica. Al usar Semestrix, aceptas estos términos en su totalidad. Te recomendamos leerlos cuidadosamente.",
+    "Bienvenido a Semestrix. Estos Términos de Servicio regulan tu uso de esta plataforma de planificación académica. Al usar Semestrix, aceptas estos términos en su totalidad. Te recomiendo leerlos cuidadosamente.",
   contactTitle: "¿Preguntas sobre los Términos?",
   contactSubtitle:
-    "Si tienes dudas sobre estos Términos de Servicio o necesitas aclaraciones, no dudes en contactarnos.",
+    "Si tienes dudas sobre estos Términos de Servicio o necesitas aclaraciones, no dudes en contactarme.",
   contactEmail: "castaneda.systems@gmail.com",
   supportLink: "/help",
   footerDescription:
@@ -31,7 +31,7 @@ export const TERMS_SECTIONS = [
       },
       {
         subtitle: "Capacidad Legal",
-        text: "Al usar nuestros servicios, declaras que tienes la capacidad legal para celebrar estos términos y que no estás prohibido de usar el servicio bajo las leyes aplicables.",
+        text: "Al usar los servicios, declaras que tienes la capacidad legal para celebrar estos términos y que no estás prohibido de usar el servicio bajo las leyes aplicables.",
       },
     ],
   },
@@ -44,11 +44,11 @@ export const TERMS_SECTIONS = [
       },
       {
         subtitle: "Disponibilidad del Servicio",
-        text: "Nos esforzamos por mantener Semestrix disponible 24/7, pero no garantizamos un tiempo de actividad del 100%. Podemos realizar mantenimiento programado o enfrentar interrupciones técnicas.",
+        text: "Me esfuerzo por mantener Semestrix disponible 24/7, pero no garantizo un tiempo de actividad del 100%. Puede haber mantenimiento programado o interrupciones técnicas.",
       },
       {
         subtitle: "Actualizaciones y Cambios",
-        text: "Nos reservamos el derecho de modificar, actualizar o discontinuar características del servicio en cualquier momento, con o sin previo aviso.",
+        text: "Me reservo el derecho de modificar, actualizar o discontinuar características del servicio en cualquier momento, con o sin previo aviso.",
       },
     ],
   },
@@ -74,7 +74,7 @@ export const TERMS_SECTIONS = [
     content: [
       {
         subtitle: "Uso Personal y Académico",
-        text: "Semestrix está destinado para uso personal y académico. No puedes usar el servicio para propósitos comerciales sin nuestro consentimiento previo por escrito.",
+        text: "Semestrix está destinado para uso personal y académico. No puedes usar el servicio para propósitos comerciales sin mi consentimiento previo por escrito.",
       },
       {
         subtitle: "Comportamiento Prohibido",
@@ -95,7 +95,7 @@ export const TERMS_SECTIONS = [
       },
       {
         subtitle: "Licencia de Uso",
-        text: "Al proporcionar contenido a Semestrix, nos otorgas una licencia limitada para usar, almacenar y procesar ese contenido únicamente para proporcionar nuestros servicios.",
+        text: "Al proporcionar contenido a Semestrix, me otorgas una licencia limitada para usar, almacenar y procesar ese contenido únicamente para proporcionar los servicios.",
       },
       {
         subtitle: "Responsabilidad del Contenido",
@@ -108,15 +108,15 @@ export const TERMS_SECTIONS = [
     content: [
       {
         subtitle: "Política de Privacidad",
-        text: "Tu privacidad es importante para nosotros. El uso de tu información personal está regido por nuestra Política de Privacidad, que forma parte integral de estos términos.",
+        text: "Tu privacidad es importante. El uso de tu información personal está regido por la Política de Privacidad, que forma parte integral de estos términos.",
       },
       {
         subtitle: "Seguridad de los Datos",
-        text: "Implementamos medidas de seguridad razonables para proteger tu información, pero no podemos garantizar la seguridad absoluta de los datos transmitidos por internet.",
+        text: "Implemento medidas de seguridad razonables para proteger tu información, pero no puedo garantizar la seguridad absoluta de los datos transmitidos por internet.",
       },
       {
         subtitle: "Retención de Datos",
-        text: "Conservamos tu información solo mientras sea necesario para proporcionar nuestros servicios o según lo requiera la ley.",
+        text: "Conservo tu información solo mientras sea necesario para proporcionar los servicios o según lo requiera la ley.",
       },
     ],
   },
@@ -129,16 +129,33 @@ export const TERMS_SECTIONS = [
       },
       {
         subtitle: "Licencia de Uso",
-        text: "Te otorgamos una licencia limitada, no exclusiva y revocable para usar Semestrix únicamente para los propósitos previstos en estos términos.",
+        text: "Te otorgo una licencia limitada, no exclusiva y revocable para usar Semestrix únicamente para los propósitos previstos en estos términos.",
       },
       {
-        subtitle: "Código Abierto",
-        text: "Partes de Semestrix pueden estar disponibles bajo licencias de código abierto. Estas licencias específicas prevalecen sobre estos términos para esos componentes.",
+        subtitle: "Restricciones de Uso",
+        text: "No puedes copiar, modificar, distribuir, vender o sublicenciar ninguna parte del código, diseño o contenido de Semestrix sin autorización expresa por escrito.",
       },
     ],
   },
   {
-    title: "8. Limitación de Responsabilidad",
+    title: "8. Ingeniería Inversa Prohibida",
+    content: [
+      {
+        subtitle: "Protección del Código",
+        text: "Está estrictamente prohibido descompilar, realizar ingeniería inversa, desensamblar o intentar derivar el código fuente de Semestrix o cualquiera de sus componentes.",
+      },
+      {
+        subtitle: "Herramientas Automatizadas",
+        text: "No puedes usar bots, scrapers, crawlers u otras herramientas automatizadas para acceder, extraer datos o interactuar con Semestrix sin autorización expresa.",
+      },
+      {
+        subtitle: "Protección de API",
+        text: "El acceso a las APIs de Semestrix está reservado exclusivamente para el funcionamiento de la plataforma. Cualquier acceso no autorizado puede resultar en la terminación inmediata de tu cuenta.",
+      },
+    ],
+  },
+  {
+    title: "9. Limitación de Responsabilidad",
     content: [
       {
         subtitle: "Servicio 'Como Está'",
@@ -146,7 +163,7 @@ export const TERMS_SECTIONS = [
       },
       {
         subtitle: "Limitación de Daños",
-        text: "En la máxima medida permitida por la ley, no seremos responsables de daños indirectos, incidentales, especiales o consecuentes que resulten del uso de Semestrix.",
+        text: "En la máxima medida permitida por la ley, no seré responsable de daños indirectos, incidentales, especiales o consecuentes que resulten del uso de Semestrix.",
       },
       {
         subtitle: "Responsabilidad del Usuario",
@@ -155,32 +172,32 @@ export const TERMS_SECTIONS = [
     ],
   },
   {
-    title: "9. Terminación",
+    title: "10. Terminación",
     content: [
       {
         subtitle: "Terminación por el Usuario",
-        text: "Puedes terminar tu cuenta en cualquier momento eliminando tu perfil o contactándonos. La terminación no afecta las obligaciones ya incurridas.",
+        text: "Puedes terminar tu cuenta en cualquier momento eliminando tu perfil o contactándome. La terminación no afecta las obligaciones ya incurridas.",
       },
       {
         subtitle: "Terminación por Semestrix",
-        text: "Podemos suspender o terminar tu cuenta si violas estos términos, sin previo aviso y sin responsabilidad hacia ti.",
+        text: "Puedo suspender o terminar tu cuenta si violas estos términos, sin previo aviso y sin responsabilidad hacia ti.",
       },
       {
         subtitle: "Efectos de la Terminación",
-        text: "Al terminar tu cuenta, tu derecho a usar Semestrix cesa inmediatamente, y podemos eliminar tu información de acuerdo con nuestra Política de Privacidad.",
+        text: "Al terminar tu cuenta, tu derecho a usar Semestrix cesa inmediatamente, y puedo eliminar tu información de acuerdo con la Política de Privacidad.",
       },
     ],
   },
   {
-    title: "10. Modificaciones a los Términos",
+    title: "11. Modificaciones a los Términos",
     content: [
       {
         subtitle: "Derecho a Modificar",
-        text: "Nos reservamos el derecho de modificar estos Términos de Servicio en cualquier momento. Las modificaciones entrarán en vigor inmediatamente después de su publicación.",
+        text: "Me reservo el derecho de modificar estos Términos de Servicio en cualquier momento. Las modificaciones entrarán en vigor inmediatamente después de su publicación.",
       },
       {
         subtitle: "Notificación de Cambios",
-        text: "Te notificaremos sobre cambios significativos a través de email o mediante un aviso prominente en Semestrix.",
+        text: "Te notificaré sobre cambios significativos a través de email o mediante un aviso prominente en Semestrix.",
       },
       {
         subtitle: "Aceptación Continuada",
@@ -189,7 +206,7 @@ export const TERMS_SECTIONS = [
     ],
   },
   {
-    title: "11. Ley Aplicable y Resolución de Disputas",
+    title: "12. Ley Aplicable y Resolución de Disputas",
     content: [
       {
         subtitle: "Ley Aplicable",
@@ -197,7 +214,7 @@ export const TERMS_SECTIONS = [
       },
       {
         subtitle: "Resolución Amistosa",
-        text: "Alentamos la resolución amistosa de cualquier disputa. Contáctanos primero para intentar resolver cualquier problema de manera colaborativa.",
+        text: "Aliento la resolución amistosa de cualquier disputa. Contáctame primero para intentar resolver cualquier problema de manera colaborativa.",
       },
       {
         subtitle: "Jurisdicción",
