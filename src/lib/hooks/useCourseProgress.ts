@@ -137,7 +137,7 @@ export function useCourseProgress(versionId: number | null): DashboardProgress {
                 if (approvedCredits < req.value) {
                   reqsMet = false;
                   missingRequirements.push(
-                    `Créditos: Requiere ${req.value} (Tienes ${approvedCredits})`
+                    `Créditos: Requiere ${req.value} (Tienes ${approvedCredits})`,
                   );
                 }
               } else if (req.type === "corequisite") {
@@ -169,7 +169,8 @@ export function useCourseProgress(versionId: number | null): DashboardProgress {
             if (reqsMet) {
               // Check if missing coreqs
               const hasMissingCoreqs = course.requirements.some(
-                (r) => r.type === "corequisite" && !passedCourseIds.has(r.value)
+                (r) =>
+                  r.type === "corequisite" && !passedCourseIds.has(r.value),
               );
               if (hasMissingCoreqs) {
                 status = "warning";
@@ -187,7 +188,7 @@ export function useCourseProgress(versionId: number | null): DashboardProgress {
             historyItem,
             missingRequirements,
           };
-        }
+        },
       );
 
       const semApprovedCredits = semesterCourses
@@ -202,13 +203,11 @@ export function useCourseProgress(versionId: number | null): DashboardProgress {
       };
     });
 
-    const totalStructureCredits = structure.semesters.reduce(
-      (acc, s) => acc + s.total_credits,
-      0
-    );
+    // Use total_credits from backend instead of calculating from semesters
+    const totalStructureCredits = structure.total_credits || 0;
     const totalStructureCount = structure.semesters.reduce(
       (acc, s) => acc + s.courses.length,
-      0
+      0,
     );
 
     return {
