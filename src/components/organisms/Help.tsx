@@ -14,8 +14,26 @@ const Help = () => {
   const filteredFAQs = FAQS.filter(
     (faq) =>
       faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      faq.answer.toLowerCase().includes(searchTerm.toLowerCase())
+      faq.answer.toLowerCase().includes(searchTerm.toLowerCase()),
   );
+
+  const handleEmailClick = () => {
+    // Construir email de forma ofuscada para evitar scrapers
+    const user = "castaneda.systems";
+    const domain = "gmail.com";
+    const email = `${user}@${domain}`;
+    const subject = encodeURIComponent("Soporte - Semestrix");
+    window.location.href = `mailto:${email}?subject=${subject}`;
+  };
+
+  const handleFeedbackClick = () => {
+    // Usar el mismo email para feedback
+    const user = "castaneda.systems";
+    const domain = "gmail.com";
+    const email = `${user}@${domain}`;
+    const subject = encodeURIComponent("Feedback - Semestrix");
+    window.location.href = `mailto:${email}?subject=${subject}`;
+  };
 
   return (
     <section
@@ -123,12 +141,18 @@ const Help = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button className="button-primary text-white px-8 py-3 rounded-lg font-semibold flex items-center gap-2 transition-all duration-300 hover:scale-105 active:scale-95">
+              <button
+                onClick={handleEmailClick}
+                className="button-primary text-white px-8 py-3 rounded-lg font-semibold flex items-center gap-2 transition-all duration-300 hover:scale-105 active:scale-95"
+              >
                 <SvgIcon name="mail" />
                 Enviar Email
               </button>
 
-              <button className="bg-white/20 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 text-gray-900 dark:text-white px-8 py-3 rounded-lg font-semibold flex items-center gap-2 hover:bg-white/30 dark:hover:bg-gray-700/30 hover:border-primary/50 hover:scale-105 active:scale-95 transition-all duration-300">
+              <button
+                onClick={handleFeedbackClick}
+                className="bg-white/20 dark:bg-gray-800/20 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 text-gray-900 dark:text-white px-8 py-3 rounded-lg font-semibold flex items-center gap-2 hover:bg-white/30 dark:hover:bg-gray-700/30 hover:border-primary/50 hover:scale-105 active:scale-95 transition-all duration-300"
+              >
                 <SvgIcon name="message-circle" className="w-5 h-5" />
                 Déjanos tu feedback
               </button>
