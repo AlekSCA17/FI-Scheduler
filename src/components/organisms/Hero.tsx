@@ -20,7 +20,7 @@ const HeroContent = () => {
     // If not authenticated, open auth modal
     if (!user) {
       const authModalCheckbox = document.getElementById(
-        "auth-modal"
+        "auth-modal",
       ) as HTMLInputElement;
       if (authModalCheckbox) {
         authModalCheckbox.checked = true;
