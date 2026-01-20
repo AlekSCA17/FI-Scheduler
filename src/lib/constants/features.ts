@@ -1,38 +1,38 @@
 export const FEATURES = [
   {
     iconName: "calendar-check",
-    title: "Planificación Inteligente",
+    title: "Planificación Académica",
     description:
-      "Organiza tu horario académico de manera eficiente con nuestro sistema inteligente que optimiza tu tiempo de estudio.",
+      "Organiza tu semestre de manera eficiente con herramientas que te ayudan a visualizar y gestionar tu carga académica.",
   },
   {
     iconName: "write-book",
-    title: "Gestión de Materias",
+    title: "Explorador de Cursos",
     description:
-      "Administra todas tus materias, prerrequisitos y créditos en un solo lugar con una interfaz intuitiva.",
+      "Consulta el catálogo completo de materias con información detallada sobre secciones, profesores y horarios disponibles.",
   },
   {
     iconName: "graph-bar-increase",
-    title: "Seguimiento de Progreso",
+    title: "Seguimiento de Historial",
     description:
-      "Visualiza tu avance académico con gráficos detallados y estadísticas en tiempo real de tu rendimiento.",
+      "Registra todas las materias que has cursado y visualiza tu progreso académico con estadísticas detalladas.",
   },
   {
     iconName: "circle-check",
-    title: "Control de Prerrequisitos",
+    title: "Validación de Prerrequisitos",
     description:
-      "Identifica automáticamente qué materias puedes cursar según tu progreso actual y prerrequisitos completados.",
+      "Verifica automáticamente qué materias puedes cursar según las materias que has aprobado y los prerrequisitos de tu carrera.",
   },
   {
     iconName: "star",
-    title: "Recomendaciones Personalizadas",
+    title: "Gestión de Programas",
     description:
-      "Recibe sugerencias inteligentes sobre qué materias tomar basadas en tu rendimiento y objetivos académicos.",
+      "Accede a la malla curricular completa de tu carrera con todos los cursos, créditos y requisitos organizados por semestre.",
   },
   {
     iconName: "crystal-ball",
-    title: "Análisis Predictivo",
+    title: "Análisis de Avance",
     description:
-      "Predice tu fecha de graduación y planifica tu carrera con nuestro sistema de análisis avanzado.",
+      "Visualiza tu progreso en la carrera, identifica materias pendientes y obtén una visión clara de tu trayectoria académica.",
   },
 ] as const;
