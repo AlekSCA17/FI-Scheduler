@@ -24,6 +24,7 @@ export default function DashboardPage() {
   const { data: profile } = useMyProfile();
   const { data: user } = useCurrentUser();
   const { data: programs } = usePrograms();
+  const { data: history } = useMyHistory();
   const { semesters, overallProgress, extracurriculars, error } =
     useCourseProgress(profile?.current_version_id || null);
 
@@ -48,7 +49,7 @@ export default function DashboardPage() {
 
   const handleSaveCourse = (
     historyId: number | null,
-    data: ManualUpdateRequest
+    data: ManualUpdateRequest,
   ) => {
     if (historyId) {
       // Update existing history entry
@@ -56,7 +57,7 @@ export default function DashboardPage() {
         { historyId, data },
         {
           onSuccess: () => setIsModalOpen(false),
-        }
+        },
       );
     } else {
       // Create new history entry
@@ -74,8 +75,25 @@ export default function DashboardPage() {
   };
 
   const programName = programs?.find(
-    (p) => p.program_id === profile?.current_program_id
+    (p) => p.program_id === profile?.current_program_id,
   )?.program_name;
+
+  // Calculate grade average from history
+  const calculateAverage = () => {
+    if (!history || history.length === 0) return "-";
+
+    const gradesWithNumbers = history.filter(
+      (item) =>
+        item.grade !== null && item.grade > 0 && item.status === "passed",
+    );
+
+    if (gradesWithNumbers.length === 0) return "-";
+
+    const sum = gradesWithNumbers.reduce((acc, item) => acc + item.grade!, 0);
+    const average = sum / gradesWithNumbers.length;
+
+    return average.toFixed(1);
+  };
 
   if (error) {
     return (
@@ -150,7 +168,7 @@ export default function DashboardPage() {
               ? Math.round(
                   (overallProgress.approvedCredits /
                     overallProgress.totalCredits) *
-                    100
+                    100,
                 )
               : 0
           }%`}
@@ -164,9 +182,9 @@ export default function DashboardPage() {
           variant="success"
         />
         <StatsCard
-          label="Semestre"
-          value={profile?.current_semester?.toString() || "-"}
-          icon="calendar-check"
+          label="Promedio"
+          value={calculateAverage()}
+          icon="star"
           variant="info"
         />
       </div>
