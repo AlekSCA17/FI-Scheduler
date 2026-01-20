@@ -2,8 +2,35 @@ import { FEATURES } from "@lib/constants/features";
 import FeatureCard from "@molecules/FeatureCard";
 import CTAButton from "@atoms/CTAButton";
 import AnimatedText from "@atoms/AnimatedText";
+import { useNavigate } from "react-router-dom";
+import { useNeonAuth } from "@lib/hooks/useNeonAuth";
+import { useProfileStatus } from "@services/profiles/queries";
 
 const Features = () => {
+  const navigate = useNavigate();
+  const { user } = useNeonAuth();
+  const { data: status } = useProfileStatus();
+
+  const handleCTAClick = () => {
+    // If not authenticated, open auth modal
+    if (!user) {
+      const authModalCheckbox = document.getElementById(
+        "auth-modal",
+      ) as HTMLInputElement;
+      if (authModalCheckbox) {
+        authModalCheckbox.checked = true;
+      }
+      return;
+    }
+
+    // If authenticated, redirect based on onboarding status
+    if (!status || !status.has_profile || status.onboarding_step < 3) {
+      navigate("/onboarding");
+    } else {
+      navigate("/dashboard");
+    }
+  };
+
   return (
     <section
       id="features"
@@ -44,7 +71,11 @@ const Features = () => {
 
         {/* Bottom CTA */}
         <div className="text-center mt-16">
-          <CTAButton label="Explorar Todas las Funciones" delay={0.8} />
+          <CTAButton
+            label="Explorar Todas las Funciones"
+            delay={0.8}
+            onClick={handleCTAClick}
+          />
         </div>
       </div>
     </section>
