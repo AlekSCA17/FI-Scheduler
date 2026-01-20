@@ -2,8 +2,35 @@ import { GUIDE_STEPS } from "@lib/constants/guide";
 import AnimatedText from "@atoms/AnimatedText";
 import CTAButton from "@atoms/CTAButton";
 import GuideStep from "@molecules/GuideStep";
+import { useNavigate } from "react-router-dom";
+import { useNeonAuth } from "@lib/hooks/useNeonAuth";
+import { useProfileStatus } from "@services/profiles/queries";
 
 const Guide = () => {
+  const navigate = useNavigate();
+  const { user } = useNeonAuth();
+  const { data: status } = useProfileStatus();
+
+  const handleCTAClick = () => {
+    // If not authenticated, open auth modal
+    if (!user) {
+      const authModalCheckbox = document.getElementById(
+        "auth-modal",
+      ) as HTMLInputElement;
+      if (authModalCheckbox) {
+        authModalCheckbox.checked = true;
+      }
+      return;
+    }
+
+    // If authenticated, redirect based on onboarding status
+    if (!status || !status.has_profile || status.onboarding_step < 3) {
+      navigate("/onboarding");
+    } else {
+      navigate("/dashboard");
+    }
+  };
+
   return (
     <section
       id="guide"
@@ -46,11 +73,15 @@ const Guide = () => {
 
         {/* Bottom CTA */}
         <div className="text-center mt-20">
-          <CTAButton label="Comenzar Ahora" delay={1.0} />
+          <CTAButton
+            label="Comenzar Ahora"
+            delay={1.0}
+            onClick={handleCTAClick}
+          />
 
           <AnimatedText
             tag="p"
-            text="¿Necesitas ayuda? Consulta nuestra documentación completa"
+            text="Comienza a gestionar tu carrera académica de forma inteligente"
             delay={1.1}
             className="mt-6 text-gray-500 dark:text-gray-400"
           />
