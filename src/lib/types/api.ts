@@ -22,6 +22,7 @@ export interface CurriculumVersion {
   version_id: number;
   program_id: number;
   version_year: number;
+  total_credits: number;
   status: "active" | "inactive" | "deprecated";
   created_at: string;
   updated_at: string;
@@ -219,6 +220,7 @@ export interface CurriculumStructure {
   version_id: number;
   program_id: number;
   version_year: number;
+  total_credits: number;
   semesters: CurriculumSemester[];
 }
 
